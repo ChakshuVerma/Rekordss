@@ -12,7 +12,7 @@ const SiteLandingPage = () => {
   useEffect(() => {
     async function siteLandingPage() {
       try {
-        const res = await fetch(`/homee`, {
+        const res = await fetch(`https://rekordss.onrender.com/home`, {
           method: "GET",
           headers: {
               Accept: "application/json",

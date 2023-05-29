@@ -132,7 +132,7 @@ router.get('/myprofile', authenticate, async (req, res) => {
     res.status(201).json({user: req.rootUser, userProgress: userProgress, message: "Welcome to Profile"});
 })
 
-router.get('/homee', authenticate, (req, res) =>{
+router.get('/home', authenticate, (req, res) =>{
     let obj = {user: req.rootUser, message: "Welcome to dashboard"};
     res.status(201).json(obj);
 });
