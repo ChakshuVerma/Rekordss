@@ -8,7 +8,10 @@ const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload')
 const cors = require('cors');
 
-app.use(cors());
+app.use(cors({
+    origin: '*'
+}));
+
 dotenv.config({path: './config.env'});
 
 const DB = process.env.DATABASE;
