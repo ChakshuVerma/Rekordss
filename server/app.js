@@ -10,7 +10,8 @@ const cors = require('cors');
 
 app.use(cors({
     origin: 'https://main--rekords.netlify.app',
-    credentials: 'true'
+    credentials: true,
+    // Access-Control-Allow-Credentials: true
 }));
 
 // app.use(function (req, res, next) {
