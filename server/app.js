@@ -6,6 +6,9 @@ const path = require("path")
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload')
+const cors = require('cors');
+
+app.use(cors());
 dotenv.config({path: './config.env'});
 
 const DB = process.env.DATABASE;
