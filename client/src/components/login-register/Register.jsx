@@ -46,7 +46,7 @@ const Register = () =>{
         e.preventDefault();
         const{username, email, phone, password, cpassword} = user;
  
-        const res = await fetch('./register', {
+        const res = await fetch('https://rekordss.onrender.com/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -9,7 +9,7 @@ const Logout = () => {
     useEffect(() => {
         async function callLogout(){
             try {
-                const res = await fetch('/logout', {
+                const res = await fetch('https://rekordss.onrender.com/logout', {
                     method: "GET",
                     headers: {
                         Accept: "application/json",

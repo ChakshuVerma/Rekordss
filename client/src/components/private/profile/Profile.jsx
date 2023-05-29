@@ -15,7 +15,7 @@ const Profile = () => {
     useEffect(() => {
         async function callProfile(){
             try {
-                const res = await fetch(`/myprofile`, {
+                const res = await fetch(`https://rekordss.onrender.com/myprofile`, {
                     method: "GET",
                     headers: {
                         Accept: "application/json",

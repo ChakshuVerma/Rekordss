@@ -31,7 +31,7 @@ const Vocabulary = () => {
 
         async function callVocabulary() {
             try {
-                const res = await fetch('/vocabulary', {
+                const res = await fetch('https://rekordss.onrender.com/vocabulary', {
                     method: "GET",
                     headers: {
                         Accept: "application/json",
@@ -155,7 +155,7 @@ const Vocabulary = () => {
     // function to add new word
     async function addNewWord() {
         try {
-            const res = await fetch('/vocabulary/addWord', {
+            const res = await fetch('https://rekordss.onrender.com/vocabulary/addWord', {
                 method: "POST",
                 headers: {
                     Accept: "application/json",
@@ -218,7 +218,7 @@ const Vocabulary = () => {
     // Function to add a new label to an existing word
     async function addNewLabelToWord(newLabel, wordObj) {
         try {
-            const res = await fetch('/vocabulary/addNewLabelToWord', {
+            const res = await fetch('https://rekordss.onrender.com/vocabulary/addNewLabelToWord', {
                 method: "POST",
                 headers: {
                     Accept: "application/json",
@@ -245,7 +245,7 @@ const Vocabulary = () => {
     // Function to remove a label from an existing word
     async function removeLabelFromWord(removeLabel, wordObj) {
         try {
-            const res = await fetch('/vocabulary/removeLabelFromWord', {
+            const res = await fetch('https://rekordss.onrender.com/vocabulary/removeLabelFromWord', {
                 method: "POST",
                 headers: {
                     Accept: "application/json",
@@ -278,7 +278,7 @@ const Vocabulary = () => {
     async function deleteWord() {
         if (window.confirm(`Do you want to delete '${wordSelected.word}' ?`)) {
             try {
-                const res = await fetch('/vocabulary/deleteWord', {
+                const res = await fetch('https://rekordss.onrender.com/vocabulary/deleteWord', {
                     method: "POST",
                     headers: {
                         Accept: "application/json",
