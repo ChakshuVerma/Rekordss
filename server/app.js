@@ -9,23 +9,9 @@ const fileUpload = require('express-fileupload')
 const cors = require('cors');
 
 app.use(cors({
-//     // origin: 'https://rekords.netlify.app',
+    origin: ['https://rekords.netlify.app', 'http://localhost:3000'],
     credentials: true,
 }));
-
-app.use((req, res, next) => {
-    const corsWhitelist = [
-        'https://rekords.netlify.app',
-        'http://localhost:3000',
-        // 'https:/'
-    ];
-    if (corsWhitelist.indexOf(req.headers.origin) !== -1) {
-        res.header('Access-Control-Allow-Origin', req.headers.origin);
-        res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    }
-
-    next();
-});
 
 dotenv.config({path: './config.env'});
 
