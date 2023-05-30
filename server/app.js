@@ -8,11 +8,10 @@ const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload')
 const cors = require('cors');
 
-// app.use(cors({
+app.use(cors({
 //     // origin: 'https://rekords.netlify.app',
-//     origin: '*',
-//     credentials: true,
-// }));
+    credentials: true,
+}));
 
 app.use((req, res, next) => {
     const corsWhitelist = [
