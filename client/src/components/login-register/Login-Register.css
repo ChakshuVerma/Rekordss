@@ -76,12 +76,22 @@
 
 
 /* Responsiveness */
+@media (max-width: 500px) {
+    .login .main-content,
+    .register .main-content{
+        padding: 5px;
+    }
+}
+
 @media (max-width: 400px){
     .login .center-div,
     .register .center-div{
-        width: 95%;
-        border: none;
+        width: 100%;
+        /* border: none; */
+        
+        /* border: 5px solid green; */
     }
+
     .login .center-div h1,
     .register .center-div h1{
         margin-bottom: none;
