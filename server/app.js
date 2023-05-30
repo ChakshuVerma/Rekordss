@@ -9,7 +9,7 @@ const fileUpload = require('express-fileupload')
 const cors = require('cors');
 
 app.use(cors({
-    origin: ['https://rekords.netlify.app', 'http://localhost:3000'],
+    origin: 'https://rekords.netlify.app',
     credentials: true,
 }));
 
