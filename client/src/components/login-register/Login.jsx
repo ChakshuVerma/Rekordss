@@ -42,9 +42,9 @@ const Login = () =>{
         
         const res = await fetch('https://rekordss.onrender.com/login', {
             method: "POST",
+            credentials: "include",
             headers: {
-                "Content-Type": "application/json",
-                credentials: "include"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({email, password})
         });
