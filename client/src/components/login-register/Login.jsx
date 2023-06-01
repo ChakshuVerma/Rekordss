@@ -44,7 +44,8 @@ const Login = () =>{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                credentials: 'include'
+                credentials: 'include',
+                 withCredentials: true
             },
             body: JSON.stringify({email, password})
         });
@@ -59,9 +60,9 @@ const Login = () =>{
         else{
             SuccesToast(data.message);
             console.log(data);
-            // setTimeout(() => {
-            //     history.push('/');
-            // }, 1000)
+            setTimeout(() => {
+                history.push('/');
+            }, 1000)
         }
     }
 
