@@ -42,9 +42,9 @@ const Login = () =>{
         
         const res = await fetch('https://rekordss.onrender.com/login', {
             method: "POST",
-            credentials: true,
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                credentials: 'include'
             },
             body: JSON.stringify({email, password})
         });
@@ -58,7 +58,6 @@ const Login = () =>{
         }
         else{
             SuccesToast(data.message);
-            console.log(res);
             console.log(data);
             // setTimeout(() => {
             //     history.push('/');
