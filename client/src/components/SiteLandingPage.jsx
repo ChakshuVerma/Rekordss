@@ -46,7 +46,7 @@ const SiteLandingPage = () => {
       }
     }
     siteLandingPage();
-    console.clear();
+    // console.clear();
   }, [userLoggedIn, dataFetched]);
 
   return (

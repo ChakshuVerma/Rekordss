@@ -6,7 +6,7 @@ const authenticate = async (req, res, next) => {
         // Retrieve token from cookie
         const token = req.cookies.jwtoken;
         // If token is not present
-        if(token === "undefined"){
+        if(token === undefined){
             res.status(401).json({error: "Token not found"});
         }
         // decode the token

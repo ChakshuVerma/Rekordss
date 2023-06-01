@@ -56,9 +56,10 @@ const Login = () =>{
         }
         else{
             SuccesToast(data.message);
-            setTimeout(() => {
-                history.push('/');
-            }, 1000)
+            console.log(data);
+            // setTimeout(() => {
+            //     history.push('/');
+            // }, 1000)
         }
     }
 
