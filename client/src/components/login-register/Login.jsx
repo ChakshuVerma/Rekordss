@@ -57,6 +57,7 @@ const Login = () =>{
         }
         else{
             SuccesToast(data.message);
+            console.log(res);
             console.log(data);
             // setTimeout(() => {
             //     history.push('/');
