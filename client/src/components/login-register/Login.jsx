@@ -5,7 +5,7 @@ import Navbar from '../common/Navbar';
 import Footer from '../common/Footer';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import axios from 'axios';
 import {FaMailBulk, FaLock} from 'react-icons/fa'
 
 
@@ -39,18 +39,22 @@ const Login = () =>{
     const LoginUser = async (e) =>{
         e.preventDefault();
         
-        const res = await fetch('https://rekordss.onrender.com/login', {
+        const webURL = 'http://localhost:5000';
+
+        const res = await axios({
+            url: `${webURL}/login`,
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                credentials: 'include',
-                 withCredentials: true
+                // credentials: 'include',
+                withCredentials: true
             },
-            body: JSON.stringify({email, password})
+            // body: JSON.stringify({email, password})
+            data: {email, password}
         });
 
-        const data = await res.json();
-        
+        // const data = await res.json();
+        const data = res;
         // 201 means success
         if(!data || res.status !== 201){
             ErrorToast(data.error);
@@ -58,10 +62,10 @@ const Login = () =>{
         }
         else{
             SuccesToast(data.message);
-            // console.log(data);
-            setTimeout(() => {
-                history.push('/');
-            }, 1000)
+            console.log(data);
+            // setTimeout(() => {
+            //     history.push('/');
+            // }, 1000)
         }
     }
 

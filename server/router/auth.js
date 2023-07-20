@@ -26,6 +26,7 @@ router.post('/login', async (req, res) => {
                 const userID = userLogin._id;
                 const token = jwt.sign({_id: userID}, process.env.SECRET_KEY, {expiresIn: "30d"});
                 res.cookie("jwtoken", token, {expiresIn: "30d", httpOnly: true});
+                console.log(res)
                 res.status(201).json({message: 'Login successful'});   
             }
             else{
@@ -135,7 +136,7 @@ router.get('/myprofile', authenticate, async (req, res) => {
 router.get('/home', authenticate, (req, res) =>{
     let obj = {user: req.rootUser, message: "Welcome to dashboard"};
     res.status(201).json(obj);
-});
+}); 
 
 router.use('/vocabulary', authenticate, require('./vocabulary'));
 

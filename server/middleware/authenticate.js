@@ -7,7 +7,7 @@ const authenticate = async (req, res, next) => {
         const token = req.cookies.jwtoken;
         // If token is not present
         if(token === undefined){
-            res.status(401).json({error: "Token not found"});
+            return res.status(401).json({error: "Token not found"});
         }
         // decode the token
         const decoded = jwt.verify(token, process.env.SECRET_KEY);
@@ -16,7 +16,7 @@ const authenticate = async (req, res, next) => {
 
         // If user not found
         if(!rootUser){
-            res.status(401).json({error: 'User not found'});
+            return res.status(401).json({error: 'User not found'});
         }
 
         // User found 

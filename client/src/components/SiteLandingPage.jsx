@@ -9,10 +9,12 @@ const SiteLandingPage = () => {
   const [rootUser, setRootUser] = useState(null);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
 
+  const webURL = 'http://localhost:5000'
+
   useEffect(() => {
     async function siteLandingPage() {
       try {
-        const res = await fetch(`https://rekordss.onrender.com/home`, {
+        const res = await fetch(`${webURL}/home`, {
           method: "GET",
           headers: {
               Accept: "application/json",
@@ -26,9 +28,9 @@ const SiteLandingPage = () => {
 
         if (data) {
           setDataFetched(true);
-          console.log('1');
+          // console.log('1');
           if (res.status === 201) {
-            console.log('2');
+            // console.log('2');
             setRootUser(data.user);
             setUserLoggedIn(true);
           }

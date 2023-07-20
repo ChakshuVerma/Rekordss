@@ -10,7 +10,7 @@ const cors = require('cors');
 
 app.use(cors({
     origin: ['http://localhost:3000', 'https://rekords.netlify.app'],
-    // credentials: true,
+    credentials: true,
 }));
 
 dotenv.config({path: './config.env'});
