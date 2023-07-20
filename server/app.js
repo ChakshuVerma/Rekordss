@@ -9,8 +9,8 @@ const fileUpload = require('express-fileupload')
 const cors = require('cors');
 
 app.use(cors({
-    origin: 'https://rekords.netlify.app',
-    credentials: true,
+    origin: ['http://localhost:3000', 'https://rekords.netlify.app'],
+    // credentials: true,
 }));
 
 dotenv.config({path: './config.env'});

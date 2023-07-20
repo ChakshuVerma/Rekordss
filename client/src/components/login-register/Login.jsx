@@ -1,7 +1,6 @@
 import './Login-Register.css';
 import React, { useState } from 'react';
-// import {Link, useHistory} from 'react-router-dom';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import Navbar from '../common/Navbar';
 import Footer from '../common/Footer';
 import {ToastContainer, toast} from 'react-toastify';
@@ -11,7 +10,7 @@ import {FaMailBulk, FaLock} from 'react-icons/fa'
 
 
 const Login = () =>{
-    // const history = useHistory();
+    const history = useHistory();
     const NavbarContents = [];
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -59,10 +58,10 @@ const Login = () =>{
         }
         else{
             SuccesToast(data.message);
-            console.log(data);
-            // setTimeout(() => {
-            //     history.push('/');
-            // }, 1000)
+            // console.log(data);
+            setTimeout(() => {
+                history.push('/');
+            }, 1000)
         }
     }
 
