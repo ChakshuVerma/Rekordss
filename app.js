@@ -38,7 +38,12 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(fileUpload());
 
+// Static files
 app.use(express.static(path.join(__dirname, "./client/build")));
+
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 // Router
 app.use(require('./router/auth'));

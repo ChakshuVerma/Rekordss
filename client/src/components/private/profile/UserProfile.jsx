@@ -70,7 +70,7 @@ const UserProfile = ({ user, userProgress }) => {
 
     // Function to reflect these changes in the database
     async function saveChanges() {
-        const res = await fetch('.https://rekordss.onrender.com/updateUserData', {
+        const res = await fetch('/updateUserData', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

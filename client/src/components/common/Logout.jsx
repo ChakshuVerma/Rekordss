@@ -3,13 +3,12 @@ import {useHistory} from 'react-router-dom';
 
 
 const Logout = () => {
-
     const history = useHistory();
 
     useEffect(() => {
         async function callLogout(){
             try {
-                const res = await fetch('https://rekordss.onrender.com/logout', {
+                const res = await fetch(`/logout`, {
                     method: "GET",
                     headers: {
                         Accept: "application/json",

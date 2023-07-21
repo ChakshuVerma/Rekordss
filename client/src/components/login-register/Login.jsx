@@ -38,9 +38,7 @@ const Login = () =>{
     const LoginUser = async (e) =>{
         e.preventDefault();
         
-        const webURL = 'http://localhost:5000';
-
-        const res = await fetch(`${webURL}/login`,{
+        const res = await fetch(`/login`,{
             method: "POST",
             credentials: "include",
             headers: {

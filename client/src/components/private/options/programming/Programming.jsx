@@ -12,7 +12,7 @@ const Programming = () =>{
     useEffect(() => {
         async function callProgramming(){
             try {
-                const res = await fetch('https://rekordss.onrender.com/programming', {
+                const res = await fetch('/programming', {
                     method: "GET",
                     headers: {
                         Accept: "application/json",

@@ -9,12 +9,10 @@ const SiteLandingPage = () => {
   const [rootUser, setRootUser] = useState(null);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
 
-  const webURL = 'http://localhost:5000'
-
   useEffect(() => {
     async function siteLandingPage() {
       try {
-        const res = await fetch(`${webURL}/home`, {
+        const res = await fetch(`/home`, {
           method: "GET",
           headers: {
               Accept: "application/json",
@@ -46,7 +44,7 @@ const SiteLandingPage = () => {
       }
     }
     siteLandingPage();
-    // console.clear();
+    console.clear();
   }, [userLoggedIn, dataFetched]);
 
   return (

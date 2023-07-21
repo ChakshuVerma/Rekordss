@@ -31,7 +31,7 @@ const Vocabulary = () => {
 
         async function callVocabulary() {
             try {
-                const res = await fetch('https://rekordss.onrender.com/vocabulary', {
+                const res = await fetch('/vocabulary', {
                     method: "GET",
                     headers: {
                         Accept: "application/json",
