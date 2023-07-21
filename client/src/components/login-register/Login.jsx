@@ -5,7 +5,6 @@ import Navbar from '../common/Navbar';
 import Footer from '../common/Footer';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios';
 import {FaMailBulk, FaLock} from 'react-icons/fa'
 
 
@@ -41,20 +40,17 @@ const Login = () =>{
         
         const webURL = 'http://localhost:5000';
 
-        const res = await axios({
-            url: `${webURL}/login`,
+        const res = await fetch(`${webURL}/login`,{
             method: "POST",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
-                // credentials: 'include',
-                withCredentials: true
             },
-            // body: JSON.stringify({email, password})
-            data: {email, password}
+            body: JSON.stringify({email, password})
         });
 
-        // const data = await res.json();
-        const data = res;
+        const data = await res.json();
+        
         // 201 means success
         if(!data || res.status !== 201){
             ErrorToast(data.error);
@@ -62,10 +58,9 @@ const Login = () =>{
         }
         else{
             SuccesToast(data.message);
-            console.log(data);
-            // setTimeout(() => {
-            //     history.push('/');
-            // }, 1000)
+            setTimeout(() => {
+                history.push('/');
+            }, 1000)
         }
     }
 

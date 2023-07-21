@@ -28,15 +28,13 @@ const SiteLandingPage = () => {
 
         if (data) {
           setDataFetched(true);
-          // console.log('1');
           if (res.status === 201) {
-            // console.log('2');
             setRootUser(data.user);
             setUserLoggedIn(true);
           }
           else if (res.status === 401) {
             setUserLoggedIn(false);
-            // console.clear();
+            console.clear();
           }
         }
         else{
