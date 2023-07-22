@@ -9,6 +9,7 @@
 /coverage
 
 # production
+# without commenting the build line the hosted website isn't working for some reason idk why!
 # /build
 
 # misc
