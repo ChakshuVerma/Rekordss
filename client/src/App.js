@@ -6,7 +6,9 @@ import SiteLandingPage from './components/SiteLandingPage';
 import Vocabulary from './components/private/options/vocabulary/Vocabulary';
 import Programming from './components/private/options/programming/Programming';
 import ProfilePage from  './components/private/profile/Profile';
+import VocabularyOverview  from './components/overviews/VocabularyOverview';
 import {Route, Switch} from 'react-router-dom';
+// import { ProgrammingOverview } from './components/overviews/ProgrammingOverview';
 
 const App = () => {
   return ( 
@@ -19,6 +21,8 @@ const App = () => {
         <Route exact path ="/programming" component={Programming}/>
         <Route exact path ="/logout" component={Logout}/>
         <Route exact path ="/myprofile" component={ProfilePage}/>
+        <Route exact path ="/vocabularyOverview" component={VocabularyOverview}/>
+        {/* <Route exact path ="/programmingOverview" component={ProgrammingOverview}/> */}
         <Route path="*" component={PageNotFound}/>
       </Switch>
     </>

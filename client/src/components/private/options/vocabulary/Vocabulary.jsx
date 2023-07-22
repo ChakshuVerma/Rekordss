@@ -355,7 +355,7 @@ const Vocabulary = () => {
                     <Navbar contents={NavbarContents} />
                     <div className="main-content">
                         <div className="search-bar-container">
-                            <input ref={searchBoxRef} id="new-word" maxLength="15" type="text" placeholder="Enter word" value={searchQuery} onChange={(e) => searchBarHandler(e)} />
+                            <input ref={searchBoxRef} id="new-word" maxLength="15" type="text" autoComplete='false' placeholder="Enter word" value={searchQuery} onChange={(e) => searchBarHandler(e)} />
                             {addButton && <FaRegPlusSquare className="icons" onClick={addNewWord} />}
                         </div>
                         <div className="labels-container">
